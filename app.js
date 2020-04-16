@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(adminRoutes);
 app.use(clientRoutes);
 
+//page not found 404 error
+app.use((req, res) => res.status(404).send("<h1>Page not found</h1>"));
+
 //create server
 app.listen(PORT, () => {
   console.log(`Server started a port ${PORT}`);
