@@ -1,0 +1,12 @@
+{
+  "name": "complete-guide-node",
+  "version": "1.0.0",
+  "description": "complete guide nodeJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "server": "nodemon app"
+  },
+  "author": "Nyira Mwalila MD",
+  "license": "ISC"
+}
