@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 //import routes
 const adminRoutes = require("./routes/admin/admin");
 const clientRoutes = require("./routes/client/shop");
+const pageNotFound = require("./routes/404");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,11 +13,11 @@ const PORT = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //register routes
-app.use(adminRoutes);
+app.use("/admin", adminRoutes); //filter path
 app.use(clientRoutes);
 
 //page not found 404 error
-app.use((req, res) => res.status(404).send("<h1>Page not found</h1>"));
+app.use(pageNotFound);
 
 //create server
 app.listen(PORT, () => {
