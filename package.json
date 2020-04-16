@@ -4,9 +4,12 @@
   "description": "complete guide nodeJS",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
-    "server": "nodemon app"
+    "start": "node app.js",
+    "server": "nodemon app.js"
   },
   "author": "Nyira Mwalila MD",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

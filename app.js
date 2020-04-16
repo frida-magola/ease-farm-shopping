@@ -1,8 +1,17 @@
-const http = require("http");
-const routes = require("./routes");
+const express = require("express");
 
-// create the server
-const server = http.createServer(routes);
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-// server created must listen the incoming request
-server.listen(3000);
+app.use("/add-product", (req, res, next) => {
+  res.send("Add product");
+});
+app.use("/message", (req, res, next) => {
+  res.send("<h1>Message from express</h1>");
+});
+app.use("/", (req, res, next) => res.send("Hello from express"));
+
+//create server
+app.listen(PORT, () => {
+  console.log(`Server started a port ${PORT}`);
+});
